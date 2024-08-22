@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Registro</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 0, 1); /* Fondo negro con opacidad */
+            background-size: cover;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 1); /* Fondo negro con opacidad */
+            color: #fff; /* Texto blanco */
+            border-radius: 8px; /* Bordes redondeados */
+            width: 500px;
+            padding: 20px;
+            margin: 100px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            font-size: 24px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"]
+
+         {
+            width: calc(100% - 20px); /* Ancho completo menos el padding */
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background-color: #333; /* Fondo negro para los campos de texto */
+            color: #fff; /* Texto blanco en los campos de texto */
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #444; /* Fondo gris oscuro */
+            color: #fff; /* Texto blanco */
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555; /* Fondo más claro en hover */
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="registro.php" method="post">
+        <h1>REGISTRO</h1>
+        <p>Nombre <input type="text" placeholder="Ingrese su nombre" name="nombre"></p>
+        <p>Correo electrónico <input type="text" placeholder="Ingrese su correo electrónico" name="correo"></p>
+        <p>Contraseña <input type="password" placeholder="Ingrese su contraseña" name="password"></p>
+
+        <label for="mascota">¿Cómo se llama tu mascota?</label>
+        <input type="text" id="mascota" name="mascota" required>
+
+        <label for="auto">¿De qué marca es tu auto?</label>
+        <input type="text" id="auto" name="auto" required>
+
+        <label for="numero">¿Cuáles son los últimos cuatro dígitos de tu número?</label>
+        <input type="text" id="numero" name="numero" required>
+
+        <label for="trabajo">¿Dónde estudias/trabajas?</label>
+        <input type="text" id="trabajo" name="trabajo" required>
+        <input type="submit" value="Registrarse">
+    </form>
+
+   
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="registro.html" class="register-button">Registrarse</a>
+    </div>
+</body>
+</html>

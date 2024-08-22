@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('coso1.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+
+    h1 {
+        text-align: center;
+        color: #fff;
+    }
+
+    form {
+        background-color: #1a1a1a;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        max-width: 400px;
+        width: 100%;
+        margin: 20px;
+    }
+
+    p {
+        margin: 10px 0;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 4px;
+        background-color: #2c2c2c;
+        color: #fff;
+    }
+
+    input[type="submit"] {
+        background-color: #444;
+        border: none;
+        border-radius: 4px;
+        padding: 10px;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #555;
+    }
+
+    .alert {
+        color: #f00;
+        font-size: 14px;
+    }
+
+    .register-button {
+        display: inline-block;
+        background-color: #333;
+        padding: 10px 20px;
+        border-radius: 4px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .register-button:hover {
+        background-color: #444;
+    }
+       
+    </style>
+</head>
+<body>
+    <form id="loginForm" action="validar.php" method="post">
+        <h1>LOGIN</h1>
+        <p>Usuario <input type="text" placeholder="" name="usuario" id="usuario"></p>
+        <p class="alert" id="usuarioAlert"></p>
+        <p>Contraseña <input type="password" placeholder="Ingrese su contraseña" name="password" id="password"></p>
+        <p class="alert" id="passwordAlert"></p>
+        <input type="submit" value="Ingresar">
+    </form>
+
+    <form action="verificar_token.php" method="post">
+        <label for="token">Código de Autenticación:</label>
+        <input type="text" id="token" name="token" required>
+        <input type="submit" value="Verificar Token">
+    </form>
+
+
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="registro.html" class="register-button">Registrarse</a>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            let valid = true;
+            let usuario = document.getElementById('usuario').value;
+            let password = document.getElementById('password').value;
+
+            if (!usuario) {
+                document.getElementById('usuarioAlert').textContent = 'El campo de usuario es obligatorio.';
+                valid = false;
+            } else {
+                document.getElementById('usuarioAlert').textContent = '';
+            }
+
+            if (!password) {
+                document.getElementById('passwordAlert').textContent = 'El campo de contraseña es obligatorio.';
+                valid = false;
+            } else {
+                document.getElementById('passwordAlert').textContent = '';
+            }
+
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

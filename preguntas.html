@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autos - Venta de Autos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+        label {
+            display: block;
+            margin: 15px 0 15px 0;
+            color: #ffffff;
+            max-width: 90%;
+        }
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #1a1a1a;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><img src="opulens.png"></div>
+
+        <ul>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="autos.html">Autos</a></li>
+            <li><a href="ofertas.html">Ofertas</a></li>
+            <li><a href="preguntas.html">Preguntas</a></li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Registro de Preguntas de Seguridad</h1>
+        <form action="guardar_preguntas.php" method="post">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="mascota">¿Cómo se llama tu mascota?</label>
+            <input type="text" id="mascota" name="mascota" required>
+
+            <label for="auto">¿De qué marca es tu auto?</label>
+            <input type="text" id="auto" name="auto" required>
+
+            <label for="numero">¿Cuáles son los últimos cuatro dígitos de tu número?</label>
+            <input type="text" id="numero" name="numero" required>
+
+            <label for="trabajo">¿Dónde estudias/trabajas?</label>
+            <input type="text" id="trabajo" name="trabajo" required>
+
+            <input type="submit" value="Guardar Preguntas">
+        </form>
+    </div>
+                
+
+    <footer>
+        <p>&copy; 2024 Venta de Autos. Todos los derechos reservados.</p>
+        <div class="social-icons"></div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
